@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.android.test.dao.HomeDataMapper">
+
+	<select id="getAllPages" resultType="com.android.test.entity.HomePage">
+		select * from homepage where 1 = 1 
+	</select>
+	
+	<select id="getHomeTabByPageId" parameterType="java.lang.Integer" resultType="com.android.test.entity.HomeTab">
+		select * from hometab where page_id = #{ page_id } ORDER BY tab_time desc;
+	</select>
+
+	<select id="getImgByTabId" parameterType="java.lang.Integer" resultType="com.android.test.entity.HomeTabImg">
+		select * from hometabimg where tab_id = #{ tab_id }
+	</select>
+	
+	<select id="getTabById" parameterType="java.lang.Integer" resultType="com.android.test.entity.HomeTab">
+		select * from hometab where tab_id = #{ id } 
+	</select>
+
+</mapper>

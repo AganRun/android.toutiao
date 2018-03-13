@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.android.test.dao.XvDataMapper">
+
+	<select id="getAllPages" resultType="com.android.test.entity.Xv_page">
+		select * from xv_page 
+	</select>
+	
+	<select id="getTabsByPageId" resultType="com.android.test.entity.Xv_tab" parameterType="java.lang.Integer">
+		select * from xv_tab where xv_page_id = #{ page_id }
+	</select>
+	
+
+</mapper>
